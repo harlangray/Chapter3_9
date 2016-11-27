@@ -27,7 +27,7 @@ public class SearchGoogleTest {
 File pathToBinary = new File("C:\\Program Files\\Mozilla Firefox\\firefox.exe");
         FirefoxBinary ffBinary = new FirefoxBinary(pathToBinary);
         FirefoxProfile firefoxProfile = new FirefoxProfile();       
-WebDriver driver = new FirefoxDriver(ffBinary,firefoxProfile);
+ driver = new FirefoxDriver(ffBinary,firefoxProfile);
 
 //        driver = new FirefoxDriver();
         driver.manage().window().maximize();
