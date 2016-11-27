@@ -1,5 +1,6 @@
 package packt.selenium.chap3_9;
 
+import java.io.File;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,6 +11,8 @@ import packt.selenium.chap3_9.pageobjects.Google;
 import packt.selenium.chap3_9.pageobjects.GoogleSearchPage;
 
 import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.firefox.FirefoxBinary;
+import org.openqa.selenium.firefox.FirefoxProfile;
 
 /**
  * Created by Ripon on 11/19/2015.
@@ -21,7 +24,12 @@ public class SearchGoogleTest {
 
     @Before
     public void setUp() throws Exception {
-        driver = new FirefoxDriver();
+File pathToBinary = new File("C:\\Program Files\\Mozilla Firefox\\firefox.exe");
+        FirefoxBinary ffBinary = new FirefoxBinary(pathToBinary);
+        FirefoxProfile firefoxProfile = new FirefoxProfile();       
+WebDriver driver = new FirefoxDriver(ffBinary,firefoxProfile);
+
+//        driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
